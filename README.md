@@ -57,3 +57,81 @@ Follow these instructions to get the project running on your local machine for d
 ```bash
 git clone [https://github.com/your-username/bookit-project.git](https://github.com/your-username/bookit-project.git)
 cd bookit-project
+```
+
+2. Backend Setup (/server)
+Navigate to the server directory:
+
+```bash
+cd server
+Install dependencies:
+```
+
+```Bash
+npm install
+```
+Create a .env file and add your database URL:
+Create the file: touch .env
+Add this line to the new .env file, replacing the value with your external DB connection string from Render/Railway:
+
+Code snippet
+
+DATABASE_URL="postgres://your_user:your_password@your_[host.com/your_database](https://host.com/your_database)"
+Run the database migration to create your tables:
+
+Bash
+
+npx prisma migrate dev
+Important: Populate the database with sample experiences and slots:
+
+Bash
+
+npm run seed
+Start the backend server:
+
+Bash
+
+npm run dev
+The server will be running on http://localhost:3001.
+
+3. Frontend Setup (/client)
+Open a new terminal and navigate to the client directory:
+
+```Bash
+
+cd client
+```
+Install dependencies:
+
+```Bash
+
+npm install
+```
+Create a .env.local file to point to your local backend:
+
+Create the file: touch .env.local
+
+Add this line to the new .env.local file:
+
+Code snippet
+
+VITE_API_URL="http://localhost:3001"
+Start the frontend development server:
+
+```Bash
+npm run dev
+```
+The app will be running on http://localhost:5173.
+
+##🔌 API Endpoints
+All endpoints are relative to the backend URL (e.g., http://localhost:3001).MethodEndpointDescriptionGET/experiences
+Get all experiences.GET/experiences?search=...Filter experiences by a search term (checks title and location).
+GET/experiences/:idGet details and available slots for a single experience.
+POST/promo/validateValidates a promo code. 
+Requires {"code": "CODE_NAME"} in the body.
+POST/bookingsCreate a new booking. (Uses a transaction to prevent double-booking).
+
+##🎟️ Test Promo Codes
+Use these codes on the checkout page to test the validation and discount logic:
+SAVE10 (₹10 off)
+FLAT100 (₹100 off)
