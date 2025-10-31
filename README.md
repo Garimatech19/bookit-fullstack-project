@@ -121,7 +121,7 @@ npm run dev
 ```
 The app will be running on http://localhost:5173.
 
-### 🔌 API Endpoints
+## 🔌 API Endpoints
 All endpoints are relative to the backend URL (e.g., http://localhost:3001).
 | Method | Endpoint                  | Description                                                           |
 | :----- | :------------------------ | :-------------------------------------------------------------------- |
@@ -132,9 +132,8 @@ All endpoints are relative to the backend URL (e.g., http://localhost:3001).
 | `POST` | `/bookings`               | Create a new booking. (Uses a transaction to prevent double-booking). |
 
 
-### 🎟️ Test Promo Codes
+## 🎟️ Test Promo Codes
 Use these codes on the checkout page to test the validation and discount logic:
 
-## SAVE10 (₹10 off)
-
-##FLAT100 (₹100 off)
+### SAVE10 (₹10 off)
+###FLAT100 (₹100 off)
