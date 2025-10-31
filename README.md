@@ -136,4 +136,4 @@ All endpoints are relative to the backend URL (e.g., http://localhost:3001).
 Use these codes on the checkout page to test the validation and discount logic:
 
 ### SAVE10 (₹10 off)
-###FLAT100 (₹100 off)
+### FLAT100 (₹100 off)
