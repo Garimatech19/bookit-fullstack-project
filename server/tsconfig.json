@@ -1,23 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "ESNext",
+    "module": "CommonJS",            // <-- FIX #1: Must be CommonJS for a 'node' start script
     "moduleResolution": "Node",
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./src",               // <-- FIX #2: Set 'src' as the root
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "isolatedModules": true,
     "types": ["node"]
   },
-  "include": ["src/**/*", "prisma/**/*", "prisma.config.ts"],
+  "include": ["src/**/*"],          // <-- FIX #3: Only compile files in 'src'
+  "exclude": ["node_modules"],
   "ts-node": {
     "transpileOnly": true,
     "compilerOptions": {
