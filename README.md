@@ -60,19 +60,21 @@ Navigate to the server directory:
 
 ```bash
 cd server
-Install dependencies:
 ```
+Install dependencies:
 
 ```Bash
 npm install
 ```
-Create a .env file and add your database URL:
+Create a .env file and add your database URL
+
 Create the file: touch .env
-Add this line to the new .env file, replacing the value with your external DB connection string from Render/Railway:
 
-Code snippet
+Add this line to the new .env file, replacing the value with your external DB connection string from Render/Railway
 
+```bash
 DATABASE_URL="postgres://your_user:your_password@your_[host.com/your_database](https://host.com/your_database)"
+```
 
 Run the database migration to create your tables:
 ```Bash
@@ -86,7 +88,6 @@ npm run seed
 Start the backend server:
 
 ```Bash
-
 npm run dev
 ```
 The server will be running on http://localhost:3001.
@@ -95,7 +96,6 @@ The server will be running on http://localhost:3001.
 Open a new terminal and navigate to the client directory:
 
 ```Bash
-
 cd client
 ```
 Install dependencies:
@@ -104,13 +104,16 @@ Install dependencies:
 
 npm install
 ```
-Create a .env.local file to point to your local backend:
+Create a .env.local file to point to your local backend
+
 Create the file: touch .env.local
-Add this line to the new .env.local file:
 
-Code snippet
+Add this line to the new .env.local file
 
+```bash
 VITE_API_URL="http://localhost:3001"
+```
+
 Start the frontend development server:
 
 ```Bash
@@ -131,5 +134,7 @@ All endpoints are relative to the backend URL (e.g., http://localhost:3001).
 
 ### 🎟️ Test Promo Codes
 Use these codes on the checkout page to test the validation and discount logic:
-SAVE10 (₹10 off)
-FLAT100 (₹100 off)
+
+## SAVE10 (₹10 off)
+
+##FLAT100 (₹100 off)
