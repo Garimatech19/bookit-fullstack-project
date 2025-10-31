@@ -73,21 +73,22 @@ Add this line to the new .env file, replacing the value with your external DB co
 Code snippet
 
 DATABASE_URL="postgres://your_user:your_password@your_[host.com/your_database](https://host.com/your_database)"
+
 Run the database migration to create your tables:
-
-Bash
-
+```Bash
 npx prisma migrate dev
+```
 Important: Populate the database with sample experiences and slots:
 
-Bash
-
+```Bash
 npm run seed
+```
 Start the backend server:
 
-Bash
+```Bash
 
 npm run dev
+```
 The server will be running on http://localhost:3001.
 
 ### 3. Frontend Setup (/client)
@@ -104,9 +105,7 @@ Install dependencies:
 npm install
 ```
 Create a .env.local file to point to your local backend:
-
 Create the file: touch .env.local
-
 Add this line to the new .env.local file:
 
 Code snippet
@@ -120,12 +119,15 @@ npm run dev
 The app will be running on http://localhost:5173.
 
 ### 🔌 API Endpoints
-All endpoints are relative to the backend URL (e.g., http://localhost:3001).MethodEndpointDescriptionGET/experiences
-Get all experiences.GET/experiences?search=...Filter experiences by a search term (checks title and location).
-GET/experiences/:idGet details and available slots for a single experience.
-POST/promo/validateValidates a promo code. 
-Requires {"code": "CODE_NAME"} in the body.
-POST/bookingsCreate a new booking. (Uses a transaction to prevent double-booking).
+All endpoints are relative to the backend URL (e.g., http://localhost:3001).
+| Method | Endpoint                  | Description                                                           |
+| :----- | :------------------------ | :-------------------------------------------------------------------- |
+| `GET`  | `/experiences`            | Get all experiences.                                                  |
+| `GET`  | `/experiences?search=...` | Filter experiences by a search term (checks title and location).      |
+| `GET`  | `/experiences/:id`        | Get details and available slots for a single experience.              |
+| `POST` | `/promo/validate`         | Validates a promo code. Requires `{"code": "CODE_NAME"}` in the body. |
+| `POST` | `/bookings`               | Create a new booking. (Uses a transaction to prevent double-booking). |
+
 
 ### 🎟️ Test Promo Codes
 Use these codes on the checkout page to test the validation and discount logic:
